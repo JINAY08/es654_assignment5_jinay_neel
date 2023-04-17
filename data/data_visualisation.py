@@ -3,6 +3,7 @@ import os
 
 # Path: data\data_visualisation.py
 
+# function to visualise the dataset images
 def show_images():
     path = "data/images/" 
     i = 0
