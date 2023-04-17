@@ -6,7 +6,7 @@ from keras.layers import Dense, Flatten
 from keras.optimizers import SGD
 from keras.preprocessing.image import ImageDataGenerator
 
-# defining MLP model
+# define MLP model
 def define_model():
     model = Sequential()
     model.add(Flatten(input_shape=(200, 200, 3)))
@@ -14,13 +14,13 @@ def define_model():
     model.add(Dense(4096, activation='relu'))
     model.add(Dense(4096, activation='relu'))
     model.add(Dense(4096, activation='relu'))
-    model.add(Dense(1, activation='sigmoid'))           # add the output layer
-    
+    model.add(Dense(1, activation='sigmoid'))          
+    # compile model
     opt = SGD(lr=0.001, momentum=0.9)
     model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
-# plotting diagnostic learning curves
+# plot diagnostic learning curves
 def summarize_diagnostics(history):
     # plot loss
     pyplot.subplot(211)
@@ -39,18 +39,23 @@ def summarize_diagnostics(history):
 
 # run the test harness for evaluating a model
 def run_test_harness():
-    model = define_model()                            # define model        
-    datagen = ImageDataGenerator(rescale=1.0/255.0)   # create data generator
+    # define model
+    model = define_model()
+    # create data generator
+    datagen = ImageDataGenerator(rescale=1.0/255.0)   
+    # prepare iterators
     train_it = datagen.flow_from_directory('dataset_jackel_vs_nilgai/train/',
-                                            class_mode='binary', batch_size=64, target_size=(200, 200))     # prepare iterators
+                                            class_mode='binary', batch_size=64, target_size=(200, 200))     
     test_it = datagen.flow_from_directory('dataset_jackel_vs_nilgai/test/',
-                                            class_mode='binary', batch_size=64, target_size=(200, 200))     # prepare iterators
+                                            class_mode='binary', batch_size=64, target_size=(200, 200))
+    # fit model
     history = model.fit(train_it, steps_per_epoch=len(train_it),
-                        validation_data=test_it, validation_steps=len(test_it), epochs=20, verbose=0)       # fit model
-
-    _, acc = model.evaluate(test_it, steps=len(test_it), verbose=0)                                         # evaluate model
+                        validation_data=test_it, validation_steps=len(test_it), epochs=20, verbose=0)       
+    # evaluate model
+    _, acc = model.evaluate(test_it, steps=len(test_it), verbose=0)                                         
     print('> %.3f' % (acc * 100.0))
-    summarize_diagnostics(history)                                                                          # learning curves
+    # learning curves
+    summarize_diagnostics(history)                                                                          
 
 # entry point, run the test harness
 run_test_harness()
