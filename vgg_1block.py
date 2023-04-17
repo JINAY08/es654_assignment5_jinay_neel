@@ -1,4 +1,3 @@
-# baseline model for the dogs vs cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
