@@ -4,6 +4,7 @@ from tensorflow.keras.utils import load_img
 from tensorflow.keras.utils import img_to_array
 import PIL
 
+# function to download images
 def download_images(argument, folder_key):
     ddg.download(argument, max_urls = 130, folder = "data/images/", shuffle = True, safe_search = True)
     path = "data/images/" 
@@ -18,21 +19,16 @@ def download_images(argument, folder_key):
         if(i==100): break
     print(i)
 
+# downloading images for both class
 ddg.download("jackal", max_urls = 0, folder = "data/images/", shuffle = True, remove_folder = True)
 download_images('jackal "animal"', "jackal")
 download_images('nilgai "animal"', "nilgai")
 
 
-# Clean up the data folder
+# clean up the data folder
 path = "data/images/"
 for filename in os.listdir(path):
     if(filename.startswith("jackal") or filename.startswith("nilgai")):
         continue
     else:
         os.remove(os.path.join(path, filename))
-
-
-
-
-
-
