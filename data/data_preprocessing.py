@@ -1,5 +1,5 @@
-
 # load jackels vs nilgai dataset, reshape and save to a new file
+
 from os import listdir, makedirs
 from numpy import asarray
 from numpy import save
@@ -9,9 +9,11 @@ import PIL
 from shutil import copyfile, copy
 from random import seed
 from random import random
+
 # define location of dataset
 folder = 'data/images/'
 photos, labels = list(), list()
+
 # enumerate files in the directory
 i = 0
 for file in listdir(folder):
@@ -31,6 +33,7 @@ for file in listdir(folder):
 photos = asarray(photos)
 labels = asarray(labels)
 print(photos.shape, labels.shape)
+
 # save the reshaped photos
 save('jackel_vs_nilgai_photos.npy', photos)
 save('jackel_vs_nilgai_labels.npy', labels)
@@ -49,6 +52,7 @@ for subdir in subdirs:
 seed(1)
 # define ratio of pictures to use for validation
 val_ratio = 0.2
+
 # copy training dataset images into subdirectories
 src_directory = 'data/images'
 for file in listdir(src_directory):
@@ -62,6 +66,3 @@ for file in listdir(src_directory):
 	elif file.startswith('nilgai'):
 		dst = dataset_home + dst_dir + 'nilgai/' + file
 	copyfile(src, dst)
-	
-
-
