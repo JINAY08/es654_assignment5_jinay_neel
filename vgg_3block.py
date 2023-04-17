@@ -1,5 +1,3 @@
-
-# baseline model for the dogs vs cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
@@ -10,8 +8,6 @@ from keras.layers import Dense
 from keras.layers import Flatten
 from keras.optimizers import SGD
 from keras.preprocessing.image import ImageDataGenerator
-
-# define cnn model
 
 # define cnn model
 def define_model():
@@ -29,8 +25,6 @@ def define_model():
  opt = SGD(lr=0.001, momentum=0.9)
  model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
  return model
-
-
 
 # plot diagnostic learning curves
 def summarize_diagnostics(history):
