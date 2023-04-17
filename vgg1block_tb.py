@@ -1,4 +1,3 @@
-# baseline model for the dogs vs cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
@@ -19,6 +18,7 @@ import datetime
 import os
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define cnn model
 def define_model():
 	model = Sequential()
@@ -61,10 +61,6 @@ def summarize_diagnostics(history):
 	pyplot.savefig(filename + '_plot.png')
 	pyplot.close()
 
-
-
-
-# run the test harness for evaluating a model
 # run the test harness for evaluating a model
 def run_test_harness():
     # define model
