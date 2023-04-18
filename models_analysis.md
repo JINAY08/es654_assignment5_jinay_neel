@@ -11,7 +11,7 @@ Comparison amongst the four models is shown below:
    |   User-defined MLP        |      81.385     |    0.3928   |     81.875     |      67.5     |   12372147    | 
 </p>
 
-- Are the results as expected? Why or why not?
+> Are the results as expected? Why or why not?:
 The results show that the VGG model with three blocks tends to have higher training accuracy and slightly better testing accuracy compared to the VGG model with only     one block. This is expected as deeper models can capture more complex features in the data. However, the training time for VGG models with more blocks is also           significantly higher, which is also expected as deeper models require more computation.
   
 - Does data augmentation help? Why or why not?
