@@ -18,7 +18,7 @@ Comparison amongst the four models is shown below:
 - The VGG model with 3 blocks and data augmentation shows comparable training accuracy and similar testing accuracy as the VGG model with 3 blocks without data augmentation. This suggests that data augmentation may not have a significant impact on the performance of VGG models in this case, possibly due to the small size of the dataset.
   
 > Does it matter how many epochs you fine tune the model? Why or why not?
-- The number of epochs for fine-tuning the model can has an impact on the model's performance. It is important to note that too few or too many epochs can negatively impact the model's performance. Too few epochs results in underfitting, while too many epochs results in overfitting. The optimal number of epochs for fine-tuning depends on the dataset and the complexity of the model.
+- The number of epochs for fine-tuning the model has an impact on the model's performance. It is important to note that too few or too many epochs negatively impact the model's performance. Too few epochs results in underfitting, while too many epochs results in overfitting. The optimal number of epochs for fine-tuning depends on the dataset and the complexity of the model.
 
 > Are there any particular images that the model is confused about? Why or why not?
 - Based on the images from the test set and their predictions, there are some images that the model is confused about. This could be due to various reasons such as the images having similar features or patterns from both classes, low image quality, or lack of diversity in the training data. Fine-tuning the model with more diverse data, or using techniques such as regularization, could help in improving the model's performance on such images.
