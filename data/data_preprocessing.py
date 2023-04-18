@@ -1,5 +1,3 @@
-# load jackels vs nilgai dataset, reshape and save to a new file
-
 from os import listdir, makedirs
 from numpy import asarray
 from numpy import save
@@ -9,6 +7,8 @@ import PIL
 from shutil import copyfile, copy
 from random import seed
 from random import random
+
+# load jackels vs nilgai dataset, reshape and save to a new file
 
 # define location of dataset
 folder = 'data/images/'
