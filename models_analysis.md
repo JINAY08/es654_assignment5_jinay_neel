@@ -12,16 +12,16 @@ Comparison amongst the four models is shown below:
 </p>
 
 > Are the results as expected? Why or why not?
-- The results show that the VGG model with three blocks tends to have higher training accuracy and slightly better testing accuracy compared to the VGG model with only     one block. This is expected as deeper models can capture more complex features in the data. However, the training time for VGG models with more blocks is also           significantly higher, which is also expected as deeper models require more computation.
+- The results show that the VGG model with three blocks (without and with data augmentation) tends to have higher training accuracy and slightly better testing accuracy compared to the VGG model with only one block. This is expected as deeper models can capture more complex features in the data. However, the training time for VGG models with more blocks is also significantly higher, which is also expected as deeper models require more computation. The transfer learning model performs exceptionally well with high training accuracy and testing accuracy, which is also expected as transfer learning leverages pre-trained models to benefit from their learned features.
   
 > Does data augmentation help? Why or why not?
-- The VGG model with 3 blocks and data augmentation shows similar testing accuracy as the VGG model with 3 blocks without data augmentation. This suggests that data       augmentation may not have a significant impact on the performance of VGG models in this case, possibly due to the small size of the dataset.
+- The VGG model with 3 blocks and data augmentation shows comparable training accuracy and similar testing accuracy as the VGG model with 3 blocks without data augmentation. This suggests that data augmentation may not have a significant impact on the performance of VGG models in this case, possibly due to the small size of the dataset.
   
 > Does it matter how many epochs you fine tune the model? Why or why not?
-  
+- The number of epochs for fine-tuning the model can has an impact on the model's performance. It is important to note that too few or too many epochs can negatively impact the model's performance. Too few epochs results in underfitting, while too many epochs results in overfitting. The optimal number of epochs for fine-tuning depends on the dataset and the complexity of the model.
 
 > Are there any particular images that the model is confused about? Why or why not?
-
+- Based on the images from the test set and their predictions, there are some images that the model is confused about. This could be due to various reasons such as the images having similar features or patterns from both classes, low image quality, or lack of diversity in the training data. Fine-tuning the model with more diverse data, or using techniques such as regularization, could help in improving the model's performance on such images.
 
 > What can you conclude from the MLP model performance?
-- The user-defined MLP with a significantly larger number of parameters compared to VGG models performs better in terms of training accuracy, but the testing accuracy is   similar to VGG models. This suggests that while a larger MLP model can fit the training data better, it may not necessarily generalize well to unseen data, as           indicated by the testing accuracy. This highlights the importance of model architecture and not just the number of parameters in determining model performance.
+- The user-defined MLP with a significantly larger number of parameters compared to VGG models performs better in terms of training accuracy, but the testing accuracy is similar to VGG models. This suggests that while a larger MLP model can fit the training data better, it may not necessarily generalize well to unseen data, as indicated by the testing accuracy. This highlights the importance of model architecture and not just the number of parameters in determining model performance.
