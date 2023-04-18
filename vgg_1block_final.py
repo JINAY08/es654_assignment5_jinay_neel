@@ -1,4 +1,3 @@
-# baseline model for the dogs vs cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
@@ -19,9 +18,9 @@ import datetime
 import os
 import matplotlib.pyplot as plt
 import io
-
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define cnn model
 def define_model():
 	model = Sequential()
@@ -65,15 +64,12 @@ def plot_to_image(figure):
     image = tf.expand_dims(image, 0)
     return image
 
-
-# run the test harness for evaluating a model
 # run the test harness for evaluating a model
 def run_test_harness():
     # define model
     model = define_model()
     logs="logs/fit/vgg1_1block" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logs, histogram_freq=1)
-
     # create data generator
     datagen = ImageDataGenerator(rescale=1.0/255.0)
     # prepare iterators
@@ -82,7 +78,6 @@ def run_test_harness():
     # print(train_it[0])
     test_it = datagen.flow_from_directory('dataset_jackel_vs_nilgai/test/',
         class_mode='binary', batch_size=40, target_size=(200, 200))
-
     # fit model
     start_time = time.time()
     history = model.fit(train_it, steps_per_epoch=len(train_it),
@@ -104,9 +99,9 @@ def run_test_harness():
     print(len(test_preds))
     # convert predictions from probabilities to class labels
     test_preds_classes = [0 if x>0.5 else 1 for x in test_preds]
-
     # log test images and predictions on tensorboard
     logdir = "logs/vgg_1block"
+	
     file_writer = tf.summary.create_file_writer(logdir)
     with file_writer.as_default():
         figure, axes = plt.subplots(nrows=4, ncols=8, figsize=(15, 10))
