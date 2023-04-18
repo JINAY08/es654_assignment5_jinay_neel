@@ -1,4 +1,3 @@
-# vgg16 model used for transfer learning on the dogs and cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
@@ -19,6 +18,7 @@ import keras
 import io
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define cnn model
 def define_model():
 	# load model
@@ -96,10 +96,11 @@ def run_test_harness():
 	test_images, test_labels = next(test_it)   
 	test_preds = model.predict(test_images, verbose=0) 
 	print(len(test_preds))
-    # convert predictions from probabilities to class labels  
+        # convert predictions from probabilities to class labels  
 	test_preds_classes = [0 if x>0.5 else 1 for x in test_preds]
-
+	
 	logdir = "logs/transfer_learning/"   
+	
 	file_writer = tf.summary.create_file_writer(logdir)   
 	with file_writer.as_default():
 		figure, axes = plt.subplots(nrows=4, ncols=8, figsize=(15, 10))        
