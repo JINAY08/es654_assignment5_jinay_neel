@@ -1,5 +1,3 @@
-
-# baseline model for the dogs vs cats dataset
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
@@ -19,9 +17,9 @@ import datetime
 import os
 import matplotlib.pyplot as plt
 import io
-# define cnn model
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define cnn model
 def define_model():
  model = Sequential()
@@ -80,7 +78,6 @@ def run_test_harness():
 	test_it = datagen.flow_from_directory('dataset_jackel_vs_nilgai/test/',
 		class_mode='binary', batch_size=40, target_size=(200, 200))
 	# fit model
-
 	start_time = time.time()
 	history = model.fit(train_it, steps_per_epoch=len(train_it), validation_data=test_it, validation_steps=len(test_it), epochs=20, verbose=2, callbacks=[tensorboard_callback])
 
@@ -99,11 +96,12 @@ def run_test_harness():
 	test_images, test_labels = next(test_it)   
 	test_preds = model.predict(test_images, verbose=0) 
 	print(len(test_preds))
-    # convert predictions from probabilities to class labels  
+	
+    	# convert predictions from probabilities to class labels  
 	test_preds_classes = [0 if x>0.5 else 1 for x in test_preds]
-    # log test images and predictions on tensorboard
-    
+    	# log test images and predictions on tensorboard
 	logdir = "logs/vgg_3block/"   
+	
 	file_writer = tf.summary.create_file_writer(logdir)   
 	with file_writer.as_default():
 		figure, axes = plt.subplots(nrows=4, ncols=8, figsize=(15, 10))        
