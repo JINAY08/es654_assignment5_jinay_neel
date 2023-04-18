@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 import io
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define cnn model
 def define_model():
  model = Sequential()
@@ -98,11 +99,12 @@ def run_test_harness():
     test_images, test_labels = next(test_it)   
     test_preds = model.predict(test_images, verbose=0) 
     print(len(test_preds))
+    
     # convert predictions from probabilities to class labels  
     test_preds_classes = [0 if x>0.5 else 1 for x in test_preds]
     # log test images and predictions on tensorboard
-    
     logdir = "logs/vgg_3blockdataaugment/"   	
+    
     file_writer = tf.summary.create_file_writer(logdir)   
     with file_writer.as_default():
         figure, axes = plt.subplots(nrows=4, ncols=8, figsize=(15, 10))        
