@@ -16,6 +16,7 @@ import io
 import keras
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 seed(1)
+
 # define MLP model
 def define_model():
     model = Sequential()
@@ -24,8 +25,6 @@ def define_model():
     model.add(Dense(4096, activation='relu'))
     model.add(Dense(4096, activation='relu'))
     model.add(Dense(4096, activation='relu'))
-
-# Add the output layer
     model.add(Dense(1, activation='sigmoid'))
     
     opt = SGD(lr=0.001, momentum=0.9)
@@ -64,7 +63,6 @@ def run_test_harness():
     model = define_model()
     logs="logs/fit/mlp/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logs, histogram_freq=1)
-    # create data generators
     # create data generator
     datagen = ImageDataGenerator(rescale=1.0/255.0)
     # prepare iterators
@@ -90,8 +88,8 @@ def run_test_harness():
     # convert predictions from probabilities to class labels  
     test_preds_classes = [0 if x>0.5 else 1 for x in test_preds]
     # log test images and predictions on tensorboard
-    
     logdir = "logs/mlp/"   	
+    
     file_writer = tf.summary.create_file_writer(logdir)   
     with file_writer.as_default():
         figure, axes = plt.subplots(nrows=4, ncols=8, figsize=(15, 10))        
