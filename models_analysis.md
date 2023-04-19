@@ -8,7 +8,7 @@
    |   VGG (3 block)        |      132.503     |    0.5704   |     75     |      67.5     |   10333505    | 
    |   VGG (3 block with Data Augmentation)        |      319.721     |    0.51635   |     75.625     |      67.5     |   10333505    | 
    |   Transfer Learning (10 epochs)       |     427.35    |    0.09545   |     98.75     |      95     |   13800000    |
-   |   User-defined MLP        |      81.385     |    0.3928   |     81.875     |      67.5     |   12372147    | 
+   |   User-defined MLP        |      117.78     |    0.433   |     83.75     |      57.499     |   24019073    | 
 </p>
 
 ## Tensorboard Visualization:
