@@ -22,9 +22,9 @@
 
 ### VGG 3 Bolck Model:
 
-![Plot]()
-![Plot]()
-![Plot]()
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_accuracy.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_loss.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_images.png)
 
 ### VGG 3 Bolck Model (Data Augmentation):
 
@@ -33,6 +33,9 @@
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_dataaugment_images.png)
 
 ### Transfer Learning Model:
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/transfer_test_accuracy.png) ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/transfer_train_accuracy.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/transfer_test_loss.png)![Plot]( https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/transfer_train_loss.png))
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/transfer_images.png)
 
 ## Various Insights:
 > Are the results as expected? Why or why not?
@@ -45,7 +48,7 @@
 - The number of epochs for fine-tuning the model has an impact on the model's performance. It is important to note that too few or too many epochs negatively impact the model's performance. Too few epochs results in underfitting, while too many epochs results in overfitting. The optimal number of epochs for fine-tuning depends on the dataset and the complexity of the model.
 
 > Are there any particular images that the model is confused about? Why or why not?
-- Based on the images from the test set and their predictions, there are some images that the model is confused about. This could be due to various reasons such as the images having similar features or patterns from both classes, low image quality, or lack of diversity in the training data. Fine-tuning the model with more diverse data, or using techniques such as regularization, could help in improving the model's performance on such images.
+- Based on the images from the test set and their predictions, there are many images that the model is confused about. This could be due to various reasons such as the images having similar features or patterns from both classes, low image quality, or lack of diversity in the training data. Fine-tuning the model with more diverse data, or using techniques such as regularization, could help in improving the model's performance on such images.
 
 > What can you conclude from the MLP model performance?
-- The user-defined MLP with a significantly larger number of parameters compared to VGG models performs better in terms of training accuracy, but the testing accuracy is similar to VGG models. This suggests that while a larger MLP model can fit the training data better, it may not necessarily generalize well to unseen data, as indicated by the testing accuracy. This highlights the importance of model architecture and not just the number of parameters in determining model performance.
+- The user-defined MLP has a significantly larger number of parameters compared to VGG models and performs better in terms of training accuracy, but the testing accuracy is lesser than VGG models. This suggests that while a larger MLP model can fit the training data better, it may not necessarily generalize well to unseen data, as indicated by the testing accuracy. This highlights the importance of model architecture and not just the number of parameters in determining model performance.
