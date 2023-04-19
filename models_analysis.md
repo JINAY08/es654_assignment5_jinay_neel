@@ -13,20 +13,20 @@
 
 ## Tensorboard Visualization:
 
-### VGG 1 Bolck Model:
+### VGG 1 Block Model:
 
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_accuracy.png)
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_loss.png)
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_images.png)
 
 
-### VGG 3 Bolck Model:
+### VGG 3 Block Model:
 
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_accuracy.png)
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_loss.png)
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_images.png)
 
-### VGG 3 Bolck Model (Data Augmentation):
+### VGG 3 Block Model (Data Augmentation):
 
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3blockdataaugment_accuracy.png)
 ![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_dataaugment_loss.png)
