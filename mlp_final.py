@@ -21,14 +21,17 @@ seed(1)
 def define_model():
     model = Sequential()
     model.add(Flatten(input_shape=(200, 200, 3)))
-    model.add(Dense(2048, activation='relu')) ## 123 million parameters
-    model.add(Dense(4096, activation='relu'))
-    model.add(Dense(4096, activation='relu'))
-    model.add(Dense(4096, activation='relu'))
+    model.add(Dense(1024, activation='relu')) ## 240 million parameters
+    model.add(Dense(2048, activation='relu'))
+    model.add(Dense(2048, activation='relu'))
+    model.add(Dense(2048, activation='relu'))
+
+# Add the output layer
     model.add(Dense(1, activation='sigmoid'))
     
     opt = SGD(lr=0.001, momentum=0.9)
     model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
+    print("Number of parameters: ", model.count_params())
     return model
 
 def plot_to_image(figure):
