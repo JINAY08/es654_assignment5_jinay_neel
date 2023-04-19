@@ -1,3 +1,4 @@
+Reference: https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/
 import sys
 from matplotlib import pyplot
 from keras.utils import to_categorical
