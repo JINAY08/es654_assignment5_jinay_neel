@@ -1,4 +1,4 @@
-Comparison amongst the four models is shown below:
+## Comparison amongst the models is shown below:
 
 <p align = "center">
   
@@ -11,6 +11,30 @@ Comparison amongst the four models is shown below:
    |   User-defined MLP        |      81.385     |    0.3928   |     81.875     |      67.5     |   12372147    | 
 </p>
 
+## Tensorboard Visualization:
+
+### VGG 1 Bolck Model:
+
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_accuracy.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_loss.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_1block_images.png)
+
+
+### VGG 3 Bolck Model:
+
+![Plot]()
+![Plot]()
+![Plot]()
+
+### VGG 3 Bolck Model (Data Augmentation):
+
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3blockdataaugment_accuracy.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_dataaugment_loss.png)
+![Plot](https://github.com/JINAY08/es654_assignment5_jinay_neel/blob/main/images/vgg_3block_dataaugment_images.png)
+
+### Transfer Learning Model:
+
+## Various Insights:
 > Are the results as expected? Why or why not?
 - The results show that the VGG model with three blocks (without and with data augmentation) tends to have higher training accuracy and slightly better testing accuracy compared to the VGG model with only one block. This is expected as deeper models can capture more complex features in the data. However, the training time for VGG models with more blocks is also significantly higher, which is also expected as deeper models require more computation. The transfer learning model performs exceptionally well with high training accuracy and testing accuracy, which is also expected as transfer learning leverages pre-trained models to benefit from their learned features.
   
